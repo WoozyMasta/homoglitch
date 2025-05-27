@@ -30,6 +30,9 @@ for _ in {0..10}; do
 done
 
 169 186 156 194 164 174 166 189 156 169 161
+
+echo 'Just a random string for example!' | wc -c
+34
 ```
 
 ## homoglitch example
