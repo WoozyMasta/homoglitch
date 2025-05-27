@@ -22,8 +22,11 @@ jobs:
         with:
           go-version: '1.24'
 
-      - name: Build
-        run: bash ./build.sh
+      - name: Build homoglyph
+        run: bash ./build.sh glyph.txt
+
+      - name: Build homoglitch
+        run: bash ./build.sh glitch.txt
 
       - name: Create GitHub release
         uses: ncipollo/release-action@v1
