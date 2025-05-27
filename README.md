@@ -27,7 +27,7 @@ is always generated
 
 ```bash
 for _ in {0..10}; do 
-  echo 'Just a random string for example!' | ./homoglitch | wc -c | tr -d '\n'
+  echo 'Just a random string for example!' | homoglitch | wc -c | tr -d '\n'
   printf ' '
 done
 
@@ -80,3 +80,38 @@ rm homoglitch.go
 
 The glitch.txt file is based on
 [codebox/homoglyph](http://github.com/codebox/homoglyph).
+
+## some tests
+
+Test data files 149K `alice29.txt` and 471K `plrabn12.txt` from
+<https://corpus.canterbury.ac.nz/descriptions/>
+
+```bash
+sync; time homoglyph < alice29.txt > alice29-glyph.txt
+
+real    0m0,048s
+user    0m0,000s
+sys     0m0,000s
+# 436K alice29-glyph.txt
+
+sync; time homoglitch < alice29.txt > alice29-glitch.txt
+
+real    0m0,052s
+user    0m0,000s
+sys     0m0,000s
+# 664K alice29-glitch.txt
+
+sync; time homoglyph < plrabn12.txt > plrabn12-glyph.txt
+
+real    0m0,099s
+user    0m0,000s
+sys     0m0,000s
+# 1,4M plrabn12-glyph.txt
+
+sync; time homoglitch < plrabn12.txt > plrabn12-glitch.txt
+
+real    0m0,107s
+user    0m0,000s
+sys     0m0,000s
+# 2,2M plrabn12-glitch.txt
+```
