@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-# require upx
 set -eu
 
 : "${WORK_DIR:=./}"
