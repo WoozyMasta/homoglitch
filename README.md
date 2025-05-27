@@ -2,7 +2,9 @@
 
 CLI tools to make text human-readable but machine-hostile.
 
-They replace characters with visually identical or similar Unicode homoglyphs and optionally inject zero-width spaces to break indexing, searching, and translation.
+They replace characters with visually identical or similar Unicode
+[homoglyphs](https://en.wikipedia.org/wiki/Homoglyph) and optionally
+inject zero-width spaces to break indexing, searching, and translation.
 
 ## homoglyph example
 
