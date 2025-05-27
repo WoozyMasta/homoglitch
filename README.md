@@ -83,10 +83,11 @@ The glitch.txt file is based on
 
 ## some tests
 
-Test data files 149K `alice29.txt` and 471K `plrabn12.txt` from
-<https://corpus.canterbury.ac.nz/descriptions/>
+Test data files 149K `alice29.txt`, 471K `plrabn12.txt` and 3,9M `bible.txt`
+from <https://corpus.canterbury.ac.nz/descriptions/>
 
 ```bash
+## alice29.txt
 sync; time homoglyph < alice29.txt > alice29-glyph.txt
 
 real    0m0,048s
@@ -101,6 +102,7 @@ user    0m0,000s
 sys     0m0,000s
 # 664K alice29-glitch.txt
 
+## plrabn12.txt
 sync; time homoglyph < plrabn12.txt > plrabn12-glyph.txt
 
 real    0m0,099s
@@ -114,4 +116,19 @@ real    0m0,107s
 user    0m0,000s
 sys     0m0,000s
 # 2,2M plrabn12-glitch.txt
+
+## bible.txt
+sync; time homoglyph < bible.txt > bible-glyph.txt
+
+real    0m0,486s
+user    0m0,000s
+sys     0m0,000s
+# 12M bible-glyph.txt
+
+sync; time homoglitch < bible.txt > bible-glitch.txt
+
+real    0m0,567s
+user    0m0,000s
+sys     0m0,000s
+# 19M bible-glitch.txt
 ```
